@@ -1,0 +1,16 @@
+apiVersion: apps/v1
+kind: Deployment 
+metadata:
+  name: deploy-verde
+spec:
+  selector:
+    matchLabels:
+      app: verde
+  template:
+    metadata:
+      labels:
+        app: verde
+    spec:
+      containers:
+        - name: verde
+          image: kubedevio/nginx-color:green

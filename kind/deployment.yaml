@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deploy-ex
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kind
+  template:
+    metadata:
+      labels:
+        app: kind
+    spec:
+      containers:
+      - name: container1
+        image: kubedevio/nginx-color:green

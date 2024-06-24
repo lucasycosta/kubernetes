@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment 
+metadata:
+  name:  deploy-rc
+spec: 
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rc
+  template:
+    metadata:
+      labels:
+        app: rc
+    spec: 
+      containers:
+        - name: renalcare
+          image:  lucasycosta/rc-backend
